@@ -1,0 +1,31 @@
+#include <iostream>
+
+class SeriesSum {
+public:
+    int n;
+    int sum;
+
+    void calculateSum() {
+        sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i * (i + 1) / 2;
+        }
+    }
+
+    void getUserInput() {
+        std::cout << "Enter a positive integer: ";
+        std::cin >> n;
+    }
+
+    void printResult() {
+        calculateSum();
+        std::cout << "The sum of the series is: " << sum << std::endl;
+    }
+};
+
+int main() {
+    SeriesSum s;
+    s.getUserInput();
+    s.printResult();
+    return 0;
+}
